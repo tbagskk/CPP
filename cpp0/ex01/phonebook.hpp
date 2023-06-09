@@ -5,6 +5,7 @@
 #include <iostream>
 #include <string>
 #include <stdio.h>
+#include <iomanip>
 
 class Contact
 {
@@ -40,6 +41,7 @@ public:
     void    print(Contact contact);
     int     verif(std::string str);
     void    search(void);
+    std::string return_all(std::string str);
  
 };
 
