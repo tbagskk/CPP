@@ -1,8 +1,8 @@
-NAME = megaphone
+NAME = zombie
 
 SRCS =	main.cpp \
 		newZombie.cpp \
-		randomChumpk.cpp \
+		randomChump.cpp \
 		Zombie.cpp
 		
 		
@@ -14,11 +14,3 @@ $(NAME): $(OBJS)
 	$(GCC) $(OBJS) -o $(NAME) 
 
 all: $(NAME)
-
-clean:
-	rm -rf ${OBJS}
-
-fclean:	clean
-	rm -rf $(NAME)
-
-re:	fclean all
