@@ -13,10 +13,13 @@ RESET			:=	\033[0m
 
 #//= Variables =//#
 CC				:=	g++
-NAME			:=	Sed
+NAME			:=	harl
 PROJECT_NAME	:=	CPP01
-SRCS			:=	main.cpp 
-					
+SRCS			:=	main.cpp \
+					Harl.cpp
+
+
+
 
 INCLUDES		:=	-I includes
 FLAGS			:=	-Wall -Wextra -Werror -std=c++98
