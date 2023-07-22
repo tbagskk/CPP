@@ -1,3 +1,4 @@
+
 #//= Colors =//#
 BOLD			:=	\033[1m
 BLACK			:=	\033[30;1m
@@ -12,10 +13,13 @@ RESET			:=	\033[0m
 
 #//= Variables =//#
 CC				:=	g++
-NAME			:=	megaphone
-PROJECT_NAME	:=	CPP00
-SRCS			:=	megaphone.cpp 
-					
+NAME			:=	canon
+PROJECT_NAME	:=	CPP01
+SRCS			:=	main.cpp \
+					Fixed.cpp
+
+
+
 
 INCLUDES		:=	-I includes
 FLAGS			:=	-Wall -Wextra -Werror -std=c++98
