@@ -1,17 +1,17 @@
 #include <iostream>
-
+#include <cmath>
 class Fixed
 {
     private : 
 
-        int nb;
-        static const int bit;
+        int _nb;
+        static const int _fractionalBits = 8;
 
     public :
 
         Fixed();
         Fixed(int const value);
-        Fixed(int const value);
+        Fixed(float const value);
         ~Fixed();
 
         int getRawBits(void)const;
@@ -22,3 +22,5 @@ class Fixed
         Fixed(const Fixed& cpy);
         Fixed &operator=(const Fixed &src);
 };
+
+std::ostream & operator<<(std::ostream & o, Fixed const & i);
