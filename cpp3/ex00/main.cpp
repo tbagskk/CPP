@@ -1,38 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.h                                            :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gcherqui <gcherqui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/23 13:09:06 by gcherqui          #+#    #+#             */
-/*   Updated: 2023/07/23 13:09:06 by gcherqui         ###   ########.fr       */
+/*   Created: 2023/07/23 18:01:14 by gcherqui          #+#    #+#             */
+/*   Updated: 2023/07/23 18:01:14 by gcherqui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_HPP
+#include "ClapTrap.hpp"
 
-# define FIXED_HPP
 
-#include <iostream>
-
-class Fixed
+int main(void)
 {
-    private : 
+    ClapTrap claptrap("Bob");
 
-        int nb;
-        static const int bit;
-
-    public :
-
-        Fixed();
-        ~Fixed();
-
-        int getRawBits(void)const;
-        void setRawBits(int const raw);
-
-        Fixed(const Fixed& cpy);
-        Fixed &operator=(const Fixed &src);
-};
-
-#endif
+    claptrap.attack("Ennemi 1");
+    claptrap.takeDamage(5);
+    claptrap.beRepaired(3);
+    claptrap.attack("Ennemi 2");
+    claptrap.takeDamage(15);
+    
+    return 0;
+}
