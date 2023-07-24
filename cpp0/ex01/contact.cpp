@@ -1,54 +1,62 @@
-#include "phonebook.hpp"
+#include "contact.hpp"
 
 
+Contact::Contact(void)
+{
 
+}
+
+Contact::~Contact(void)
+{
+
+}
 
 std::string	Contact::get_name(void) 
 {
-	return (this->name);
+	return (this->_name);
 }
 
-std::string	Contact::get_surname(void) 
+std::string	Contact::get__surname(void) 
 {
-	return (this->surname);
+	return (this->_surname);
 }
 
-std::string	Contact::get_nickname(void) 
+std::string	Contact::get__nickname(void) 
 {
-	return (this->nickname);
+	return (this->_nickname);
 }
 
-std::string	Contact::get_phone_number(void) 
+std::string	Contact::get__phone_number(void) 
 {
-	return (this->phone_number);
+	return (this->_phone_number);
 }
 
 std::string	Contact::get_secret(void) 
 {
-	return (this->darkest_secret);
+	return (this->_darkest_secret);
 }
 
 void	Contact::set_name(std::string str)
 {
-    this->name = str;
+    this->_name = str;
 }
 
-void	Contact::set_surname(std::string str)
+void	Contact::set__surname(std::string str)
 {
-	this->surname = str;
+	this->_surname = str;
 }
 
-void	Contact::set_nickname(std::string str)
+void	Contact::set__nickname(std::string str)
 {
-	this->nickname = str;
+	this->_nickname = str;
 }
 
-void	Contact::set_phone_number(std::string str)
+void	Contact::set__phone_number(std::string str)
 {
-	this->phone_number = str;
+	this->_phone_number = str;
 }
 
 void	Contact::set_secret(std::string str)
 {
-	this->darkest_secret = str;
+	this->_darkest_secret = str;
 }

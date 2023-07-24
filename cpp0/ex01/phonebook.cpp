@@ -1,10 +1,20 @@
 #include "phonebook.hpp"
+#include "contact.hpp"
 
+Phonebook::Phonebook(void)
+{
+	this->index = 0;
+	this->var = 0;
+}
 
+Phonebook::~Phonebook(void)
+{
+	
+}
 
 int	Phonebook::verif(std::string str)
 {
-	if (str == "" )
+	if (str == "")
 		return (0);
 	else 
 		return (1);
@@ -12,68 +22,71 @@ int	Phonebook::verif(std::string str)
 
 void    Phonebook::add(void)
 {
-	if (this->index > 7)
+	if (this->index > 7 )
 	{
-		std::cout << "Le 1er contact a ete remplacee par celui-ci";
+		std::cout << "The 1st contact has been replaced by this one";
 		this->index = 0;
+		this->var = 7;
 	}
 
     std::string str;
 	str = "";
-	while (verif(str) == 0)
+	while (verif(str) == 0 && std::cin.eof() == 0)
 	{
-		std::cout << "prénom\n"; 
+		std::cout << "Name\n"; 
 		std::getline(std::cin, str);
 	}
 	this->contact[this->index].set_name(str);
 
 	str = "";
-	while (verif(str) == 0)
+	while (verif(str) == 0 && std::cin.eof() == 0)
 	{
-		std::cout << "nom de famille\n";
+		std::cout << "Surname\n";
 		std::getline(std::cin, str);
 	}
-	this->contact[this->index].set_surname(str);
+	this->contact[this->index].set__surname(str);
 
 	str = "";
-	while (verif(str) == 0)
+	while (verif(str) == 0 && std::cin.eof() == 0)
 	{
-		std::cout << "surnom\n";
+		std::cout << "Nickname\n";
 		std::getline(std::cin, str);
 	}
-	this->contact[this->index].set_nickname(str);
+	this->contact[this->index].set__nickname(str);
 	
 	str = "";
 	
-	while (verif(str) == 0)
+	while (verif(str) == 0 && std::cin.eof() == 0)
 	{
-		std::cout << "numero de telephone\n";
+		std::cout << "Phone Number\n";
 		std::getline(std::cin, str);
 	}
-	this->contact[this->index].set_phone_number(str);
+	this->contact[this->index].set__phone_number(str);
 
 	str = "";
-	while (verif(str) == 0)
+	while (verif(str) == 0 && std::cin.eof() == 0)
 	{
-		std::cout << "votre secret\n";
+		std::cout << "Your darkest\n";
 		std::getline(std::cin, str);
 	}
 	this->contact[this->index].set_secret(str);
 
 	this->index++; 
+	if (this->var <= 7)
+		this->var++;
 }
 
 void	Phonebook::print(Contact contact)
 {
 	if (contact.get_name().size() == 0)
 	{
-		std::cout << "il n'y a aucun contact\n";
+		std::cout << "No contact\n";
 		return ;
 	}
-	std::cout << "Prenom : " << contact.get_name() << "\n";
-	std::cout << "Nom de famille : " << contact.get_surname() <<  "\n";
-	std::cout << "Nickname: " << contact.get_nickname() << "\n";
-	std::cout << "Phone Number: " << contact.get_phone_number() << "\n";
+	std::cout << "Name : " << contact.get_name() << "\n";
+	std::cout << "Surname : " << contact.get__surname() <<  "\n";
+	std::cout << "Nickname: " << contact.get__nickname() << "\n";
+	std::cout << "Phone Number: " << contact.get__phone_number() << "\n";
 	std::cout << "Darkest Secret: " << contact.get_secret() << "\n";
 
 }
@@ -92,30 +105,30 @@ void	Phonebook::search(void)
 
 	if (this->index == 0)
 	{
-		std::cout << "Le repertoire est vide mon reuf\n";
+		std::cout << "The directory is empty\n";
 		return ;
 	}
 	std::cout << "|     Index|First Name| Last Name|  Nickname|\n";
-	while (i < this->index)
+	while (i < this->var)
 	{	
 		std::cout << "|----------|----------|----------|----------|" << std::endl;
 		std::cout << "|" << std::setw(10) << i + 1 << "|";
 		std::cout << std::setw(10) << return_all(this->contact[i].get_name()) << "|";
-		std::cout << std::setw(10) << return_all(this->contact[i].get_surname()) << "|";
-		std::cout << std::setw(10) << return_all(this->contact[i].get_nickname()) << "|\n";
+		std::cout << std::setw(10) << return_all(this->contact[i].get__surname()) << "|";
+		std::cout << std::setw(10) << return_all(this->contact[i].get__nickname()) << "|\n";
 		i++;
 	}
 	std::cout << "|-------------------------------------------|" << std::endl;
 	while (!std::cin.eof())
 	{
-		std::cout << "Choisis un index mon reuf\n";
+		std::cout << "Select an index | Enter 'STOP' to return to directory\n";
 		std::getline(std::cin, entries);
 		if (entries == "STOP")
 			break ;
 		if (entries.size() == 1 && entries[0] >= '1' && entries[0] <= '8')
 			this->print(this->contact[entries[0] - 1 - '0']);
 		else if (entries != "")
-			std::cout << "Index invalide mon reuf" << std::endl;
+			std::cout << "Invalid index" << std::endl;
 		
 	}
 }

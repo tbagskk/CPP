@@ -13,7 +13,7 @@ RESET			:=	\033[0m
 #//= Variables =//#
 CC				:=	g++
 NAME			:=	phonebook
-PROJECT_NAME	:=	CPP00
+PROJECT_NAME	:=	CPP01
 SRCS			:=	phonebook.cpp \
 					main.cpp \
 					contact.cpp
