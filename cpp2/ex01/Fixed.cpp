@@ -58,7 +58,7 @@ Fixed &Fixed::operator=(const Fixed &src)
 
 int Fixed::getRawBits(void)const
 {
-    std::cout << "getRawBits member function called" << std::endl;
+   // std::cout << "getRawBits member function called" << std::endl;
     return (this->_nb);
 }
 

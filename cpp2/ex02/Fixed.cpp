@@ -15,11 +15,13 @@
 Fixed::Fixed(void): _nb(0)
 {
     //std::cout << "Default constructor called" << std::endl;
+    return;
 }
 
 Fixed::~Fixed(void)
 {
     //std::cout << "Destructor called" << std::endl;
+    return;
 }
 
 Fixed::Fixed(Fixed const &cpy)
@@ -31,6 +33,7 @@ Fixed::Fixed(Fixed const &cpy)
 Fixed::Fixed(int const nb) : _nb(nb << _fractionalBits) 
 {
     //std::cout << "Int constructor called" << std::endl;  
+    return;
 }
 /*on utilise le décalage vers la gauche pour convertir value en virgule fixe. Cela correspond a 2^8 = 256 
     et on stocke le resultat dans la variable nb*/
@@ -40,6 +43,7 @@ Fixed::Fixed(int const nb) : _nb(nb << _fractionalBits)
 Fixed::Fixed(float const nb) : _nb(static_cast<int>(roundf(nb * (1 << _fractionalBits ) ))) 
 {
     //std::cout << "Float constructor called" << std::endl; 
+    return;
 }   
 /*Roundf est utilisé pour arrondir value au nbr entier le plus proche 
     Ensuite on multiplie value par 2^fracrionnalbit pour le convertir en virgule fixe
