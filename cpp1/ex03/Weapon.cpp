@@ -1,6 +1,6 @@
-#include "Weapon.h"
+#include "Weapon.hpp"
 
-Weapon::Weapon(std::string type): type(type)
+Weapon::Weapon(std::string type): _type(type)
 {
 }
 
@@ -10,7 +10,7 @@ Weapon::~Weapon(void)
 
 const std::string	&Weapon::getType(void)
 {
-	return (this->type);
+	return (this->_type);
 }
 
 bool		Weapon::setType(const std::string &newType )
@@ -20,6 +20,6 @@ bool		Weapon::setType(const std::string &newType )
 		std::cout << "new type can't be empty string" << std::endl;
 		return (false);
 	}
-	this->type = newType;
+	this->_type = newType;
 	return (true);
 }

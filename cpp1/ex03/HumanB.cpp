@@ -1,6 +1,6 @@
-#include "HumanB.h"
+#include "HumanB.hpp"
 
-HumanB::HumanB(std::string name): name(name), weapon(nullptr)
+HumanB::HumanB(std::string name): _name(name), _weapon(NULL)
 {
 }
 
@@ -10,20 +10,20 @@ HumanB::~HumanB(void)
 
 void HumanB::attack(void)
 {
-	if (this->weapon)
+	if (this->_weapon)
 	{
-		std::cout << this->name << " attacks with their " << this->weapon->getType() << std::endl;
+		std::cout << this->_name << " attacks with their " << this->_weapon->getType() << std::endl;
 
 	}
 	else
 	{
-		std::cout << this->name << " can't attack because they don't have a weapon" << std::endl;
+		std::cout << this->_name << " can't attack because they don't have a weapon" << std::endl;
 	}
 }
 
 Weapon &HumanB::getWeapon(void)
 {
-	return (*(this->weapon));
+	return (*(this->_weapon));
 }
 
 bool HumanB::setWeapon(Weapon &newWeapon)
@@ -33,6 +33,6 @@ bool HumanB::setWeapon(Weapon &newWeapon)
 		std::cerr << "New weapon can't be nothing" << std::endl;
 		return (false);
 	}
-	this->weapon = &newWeapon;
+	this->_weapon = &newWeapon;
 	return (true);
 }

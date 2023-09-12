@@ -26,7 +26,7 @@ int main(int ac, char **av)
         str += c;
     file.close();
 
-    outfile.open((std::string(av[1]) + ".replace").c_str()); //c.str permet de recuperer l'interieur d'un string
+    outfile.open((std::string(av[1]) + ".replace").c_str()); 
     if (outfile.fail())
         return (1);
     for(int i = 0; i < (int)str.size(); i++)

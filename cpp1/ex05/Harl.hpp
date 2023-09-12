@@ -1,6 +1,6 @@
-#ifndef HARL_CPP
+#ifndef HARL_HPP
 
-# define HARL_CPP
+# define HARL_HPP
 
 #include <iostream>
 #include <string>
@@ -10,10 +10,10 @@ class Harl
 {
     private :
 
-        void    debug( void) ;
-        void    info( void );
-        void    warning( void );
-        void    error( void );
+        void    _debug( void) ;
+        void    _info( void );
+        void    _warning( void );
+        void    _error( void );
 
     public :
 

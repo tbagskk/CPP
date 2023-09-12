@@ -13,7 +13,7 @@ RESET			:=	\033[0m
 
 #//= Variables =//#
 CC				:=	g++
-NAME			:=	bonjour
+NAME			:=	brain
 PROJECT_NAME	:=	CPP01
 SRCS			:=	main.cpp 
 
