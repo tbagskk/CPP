@@ -24,11 +24,13 @@ WHITE			:=	\033[37;1m
 RESET			:=	\033[0m
 
 #//= Variables =//#
-CC				:=	c++
+CC				:=	g++
 NAME			:=	ClapTrap
 PROJECT_NAME	:=	CPP03
 SRCS			:=	main.cpp \
-					ClapTrap.cpp
+					ClapTrap.cpp \
+					ScavTrap.cpp \
+					FragTrap.cpp
 
 
 

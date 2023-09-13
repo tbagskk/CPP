@@ -11,17 +11,19 @@
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
 
 int main(void)
 {
-   ScavTrap Macron("Macron");
+   FragTrap Poutine("Влади́мир Влади́мирович Пу́тин");
 
-   Macron.attack("Trump");
-   Macron.takeDamage(3);
-   Macron.beRepaired(6);
-   Macron.guardGate();
-   Macron.takeDamage(15);
+   Poutine.attack("Сталин");
+   Poutine.takeDamage(3);
+   Poutine.beRepaired(6);
+   Poutine.highFivesGuys();
+   Poutine.takeDamage(15);
+
 
     
     return 0;

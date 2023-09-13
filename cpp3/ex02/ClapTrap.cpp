@@ -12,10 +12,9 @@
 
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap(std::string name) : _Name(name), _HitPoints(10), _EnergyPoints(10), _AttackDamage(0)
+ClapTrap::ClapTrap(std::string name) : _Name(name), _HitPoints(10), _EnergyPoints(10), _AttackDamage(10)
 {
     std::cout << "Le constructeur à été appelé" << std::endl;
-    return;
 }
 
 /*
@@ -26,24 +25,11 @@ ClapTrap::ClapTrap(ClapTrap const &src)
 {
     std::cout << "Le constructeur de copie a été appelé" << std::endl;
     *this = src;
-    return;
 }
 
 ClapTrap::~ClapTrap(void)
 {
     std::cout << "Le destructeur à été appelé" << std::endl;
-    return;
-}
-
-ClapTrap &ClapTrap::operator=( ClapTrap const &rhs )
-{
-	std::cout << "Opérateur d'affectation appelé" << std::endl;
-	this->_Name = rhs._Name;
-	this->_HitPoints = rhs._HitPoints;
-	this->_EnergyPoints = rhs._EnergyPoints;
-	this->_AttackDamage = rhs._AttackDamage;
-
-	return (*this);
 }
 
 void ClapTrap::attack(const std::string& target)
@@ -91,6 +77,6 @@ void ClapTrap::beRepaired(unsigned int amount)
     }
     else
     {
-        std::cout << "ClapTrap " << _Name << " n'a plus assez de point d'énergie pour se réparer." << std::endl;
+        std::cout << "ClapTrap " << _Name << " n'a plus assez de point d'énergy pour se réparer." << std::endl;
     }
 }

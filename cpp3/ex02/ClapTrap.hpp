@@ -15,16 +15,18 @@
 # define CLAPTRAP_HPP
 
 
-#include <iostream>
+#	include <iostream>
+#	include <string.h>
+
 
 class ClapTrap
 {
-    private :
+    protected : //protected a la place de privé pour qu'ils soient accessibles par ScavTrap
 
-        std::string		_Name;
-        int 			_HitPoints;
-        int 			_EnergyPoints;
-        int 			_AttackDamage;
+        std::string	_Name;
+        int 		_HitPoints;
+        int 		_EnergyPoints;
+        int 		_AttackDamage;
 	
 	public :
 
@@ -32,11 +34,9 @@ class ClapTrap
 		ClapTrap(ClapTrap const &src);
 		~ClapTrap(void);
 
-		ClapTrap	&operator=( ClapTrap const &rhs );
-
-		void 	attack(const std::string& target);
-		void 	takeDamage(unsigned int amount);
-		void 	beRepaired(unsigned int amount);
+		void attack(const std::string& target);
+		void takeDamage(unsigned int amount);
+		void beRepaired(unsigned int amount);
 };
 
 # endif

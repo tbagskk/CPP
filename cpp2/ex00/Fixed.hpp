@@ -1,28 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Fixed.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gcherqui <gcherqui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/23 18:01:14 by gcherqui          #+#    #+#             */
-/*   Updated: 2023/07/23 18:01:14 by gcherqui         ###   ########.fr       */
+/*   Created: 2023/07/23 13:09:06 by gcherqui          #+#    #+#             */
+/*   Updated: 2023/07/23 13:09:06 by gcherqui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
+#ifndef FIXED_HPP
 
+# define FIXED_HPP
 
-int main(void)
+#include <iostream>
+
+class Fixed
 {
-   ScavTrap Macron("Macron");
+    private : 
 
-   Macron.attack("Trump");
-   Macron.takeDamage(3);
-   Macron.beRepaired(6);
-   Macron.guardGate();
-   Macron.takeDamage(15);
+        int nb;
+        static const int bit;
 
-    
-    return 0;
-}
+    public :
+
+        Fixed();
+        ~Fixed();
+
+        int getRawBits(void)const;
+        void setRawBits(int const raw);
+
+        Fixed(const Fixed& cpy);
+        Fixed &operator=(const Fixed &src);
+};
+
+#endif
