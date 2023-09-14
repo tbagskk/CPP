@@ -6,7 +6,7 @@
 #    By: gcherqui <gcherqui@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/23 13:08:46 by gcherqui          #+#    #+#              #
-#    Updated: 2023/09/13 21:49:07 by gcherqui         ###   ########.fr        #
+#    Updated: 2023/09/14 09:23:35 by gcherqui         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,7 +30,7 @@ CC				:=	c++
 NAME			:=	Animal
 PROJECT_NAME	:=	CPP04
 SRCS			:=	main.cpp \
-					Animal.cpp \
+					AAnimal.cpp \
 					Cat.cpp \
 					Dog.cpp \
 					WrongAnimal.cpp \
