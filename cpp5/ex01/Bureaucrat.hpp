@@ -1,9 +1,10 @@
 
+#pragma once
 
-#ifndef BUREAUCRAT_H
-# define BUREAUCRAT_H
+#include <iostream>
+#include "Form.hpp"
 
-# include <iostream>
+class Form;
 
 class Bureaucrat
 {
@@ -23,7 +24,7 @@ class Bureaucrat
 		void increaseGrade( void );
 		void decreaseGrade( void );
 		void setGrade( int const grade );
-
+		void signForm( Form &form );
 		
 
 		class GradeTooHighException: public std::exception
@@ -39,5 +40,3 @@ class Bureaucrat
 };
 
 std::ostream	&operator<<(std::ostream &o, Bureaucrat *a);
-
-#endif

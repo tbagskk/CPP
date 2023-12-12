@@ -1,9 +1,10 @@
 
+#pragma once
 
-#ifndef BUREAUCRAT_H
-# define BUREAUCRAT_H
+#include <iostream>
+#include "Form.hpp"
 
-# include <iostream>
+class Form;
 
 class Bureaucrat
 {
@@ -17,13 +18,14 @@ class Bureaucrat
 		Bureaucrat	&operator=( Bureaucrat const &rhs );
 		~Bureaucrat( void );
 
-		std::string getName( void );
-		int	getGrade( void );
+		std::string const getName( void ) const;
+		int	getGrade( void ) const;
 
 		void increaseGrade( void );
 		void decreaseGrade( void );
 		void setGrade( int const grade );
-
+		void signForm( Form &form );
+		void executeForm( Form const &form);
 		
 
 		class GradeTooHighException: public std::exception
@@ -39,5 +41,3 @@ class Bureaucrat
 };
 
 std::ostream	&operator<<(std::ostream &o, Bureaucrat *a);
-
-#endif
