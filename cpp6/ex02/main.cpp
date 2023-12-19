@@ -6,19 +6,22 @@
 /*   By: gcherqui <gcherqui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 12:04:04 by alecoutr          #+#    #+#             */
-/*   Updated: 2023/12/18 23:53:15 by gcherqui         ###   ########.fr       */
+/*   Updated: 2023/12/19 10:56:49 by gcherqui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include "classes.hpp"
+#include "Base.hpp"
+#include "A.hpp"
+#include "B.hpp"
+#include "C.hpp"
 # include <cstdlib>
 
 Base::~Base( void ) {};
 
 Base	*generate( void )
 {
-	std::srand(time(NULL));
+ 	std::srand(time(NULL));
 	int	i = rand() % 3;
 
 	switch (i)
