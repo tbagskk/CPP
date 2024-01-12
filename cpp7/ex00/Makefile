@@ -6,7 +6,7 @@
 #    By: gcherqui <gcherqui@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/23 13:08:46 by gcherqui          #+#    #+#              #
-#    Updated: 2023/09/13 20:58:48 by gcherqui         ###   ########.fr        #
+#    Updated: 2024/01/12 14:10:59 by gcherqui         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,7 +28,7 @@ RESET			:=	\033[0m
 #//= Variables =//#
 CC				:=	c++
 NAME			:=	whatever
-PROJECT_NAME	:=	CPP067
+PROJECT_NAME	:=	CPP07
 SRCS			:=	main.cpp \
 
 
